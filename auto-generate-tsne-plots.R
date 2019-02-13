@@ -1,4 +1,5 @@
-#assumes normal pre-processing of Seurat object up "Cluster the cells" step of https://satijalab.org/seurat/pbmc3k_tutorial.html
+#assumes normal pre-processing of Seurat object up "Cluster the cells" step of http://bit.ly/pbmc3k_tutorial
+#portions of this code from/inspired by http://bit.ly/ucdavis_scRNA_wksp_5
 
 seurat_object_var <- FindClusters(object = seurat_object_var, 
                              reduction.type = "pca", 
