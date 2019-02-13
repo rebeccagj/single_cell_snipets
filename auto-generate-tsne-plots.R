@@ -24,3 +24,5 @@ for (perp in seq(30,110,20)){ #sets "perp" to each of the values specified in se
    dev.off() #saves the photo
  }
 }
+
+seurat_object_var = SetAllIdent(seurat_object_var, id = "res.0.3") #use to switch between the res options previously computed
