@@ -64,3 +64,26 @@ seurat_to_scefxn = function(seurobj,genelist) {
   )
   sce
 }
+
+# Dimplot wrapper which creates unique files names and also names the plot based on input parameters
+dpwrapper = function(fileloc = fileloc,
+                     seuratobj = seuratobj,
+                     reduct = reduct,
+                     groupmeta = groupmeta,
+                     title = paste0(deparse(substitute(seuratobj))," ",reduct," ",groupmeta),
+                     w = 1000,
+                     h = 1000){
+  plota = DimPlot(object = seuratobj,
+                  reduction = reduct,
+                  group.by = groupmeta,
+                  pt.size = 2) + ggtitle(title)
+  print(plota)
+  png(paste0(fileloc,Sys.Date(),"-",deparse(substitute(seuratobj)),"-",reduct,"-",groupmeta,".png"), width = w, height = h)
+  print(plota)
+  dev.off()
+}
+
+dpwrapper(fileloc = './directory/here/', #specified directory to place the file in
+          seuratobj = seuratobj, #specifies which seurat object to use
+          reduct = "umap", #could be umap, pca, tsne, etc
+          groupmeta = "orig.ident") #could be anything stored in metadata
