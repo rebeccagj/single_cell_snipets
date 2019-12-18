@@ -1,8 +1,8 @@
 # May we never copy and paste again.
 
-package.version('Seurat')
+packageVersion('Seurat')
 #[1] "3.0.2"
-package.version('SingleCellExperiment')
+packageVersion('SingleCellExperiment')
 #[1] "1.6.0"
 
 # read in Seurat Object, calc meta features of blood, mito, ribo ####
@@ -83,7 +83,7 @@ dpwrapper = function(fileloc = fileloc,
   dev.off()
 }
 
-dpwrapper(fileloc = './directory/here/', #specified directory to place the file in
-          seuratobj = seuratobj, #specifies which seurat object to use
-          reduct = "umap", #could be umap, pca, tsne, etc
-          groupmeta = "orig.ident") #could be anything stored in metadata
+# dpwrapper(fileloc = './directory/here/', #specified directory to place the file in
+#           seuratobj = seuratobj, #specifies which seurat object to use
+#           reduct = "umap", #could be umap, pca, tsne, etc
+#           groupmeta = "orig.ident") #could be anything stored in metadata
